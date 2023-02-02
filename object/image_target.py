@@ -369,11 +369,11 @@ def test_target(args):
 	netB = network.feat_bottleneck(type=args.classifier, feature_dim=netF.in_features, bottleneck_dim=args.bottleneck).cuda()
 	netC = network.feat_classifier(type=args.layer, class_num = args.class_num, bottleneck_dim=args.bottleneck).cuda()
 	
-	args.modelpath = args.output_dir_src + '/target_F_' + args.savename +'.pt'   
+	args.modelpath = args.output_dir + '/target_F_' + args.savename +'.pt'   
 	netF.load_state_dict(torch.load(args.modelpath))
-	args.modelpath = args.output_dir_src + '/target_B_' + args.savename +'.pt'   
+	args.modelpath = args.output_dir + '/target_B_' + args.savename +'.pt'   
 	netB.load_state_dict(torch.load(args.modelpath))
-	args.modelpath = args.output_dir_src + '/target_C_' + args.savename +'.pt'   
+	args.modelpath = args.output_dir + '/target_C_' + args.savename +'.pt'   
 	netC.load_state_dict(torch.load(args.modelpath))
 	netF.eval()
 	netB.eval()
