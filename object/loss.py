@@ -172,6 +172,12 @@ class FocalLossAdaptive(nn.Module):
 		logpt = logpt.view(-1)
 		pt = logpt.exp()
 		gamma = self.get_gamma_list(pt)
+		# Runs into all prediction nan after some time
+		print("Checking")
+		print(input)
+		print(gamma)
+		print(logpt)
+		print(pt)
 		loss = -1 * (1-pt)**gamma * logpt
 		if self.reduction: return loss.mean()
 		else: return loss.sum()

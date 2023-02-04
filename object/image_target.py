@@ -289,6 +289,10 @@ def train_target(args):
 				loss_str = "AdaFocal"
 				classifier_loss = FocalLossAdaptive(gamma=args.gamma)(outputs_test, pred)
 				classifier_loss *= args.cls_par
+			elif args.loss == "label_smooth_ce":
+				loss_str = "(L)CE"
+				classifier_loss = CrossEntropyLabelSmooth(num_classes=args.class_num, epsilon=args.smooth)(outputs_test, pred)
+				classifier_loss *= args.cls_par
 				
 			if iter_num < interval_iter and args.dset == "VISDA-C":
 				classifier_loss *= 0
@@ -491,7 +495,8 @@ if __name__ == "__main__":
 	parser.add_argument('--pasta_b', type=float, default=0.25)
 	parser.add_argument('--pasta_k', type=float, default=2.0)
 	parser.add_argument('--gamma', type=float, default=2.0)
-	parser.add_argument('--loss', type=str, default="ce", choices=["ce", "focal_loss", "adaptive_focal_loss"])
+	parser.add_argument('--loss', type=str, default="ce", choices=["ce", "focal_loss", "adaptive_focal_loss", "label_smooth_ce"])
+	parser.add_argument('--smooth', type=float, default=0.1)
 	args = parser.parse_args()
 
 	if args.dset == 'office-home':
