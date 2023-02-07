@@ -1,0 +1,68 @@
+==========================================
+gpu_id:0
+s:0
+t:1
+max_epoch:10
+batch_size:64
+worker:2
+dset:VISDA-C
+lr:0.001
+net:resnet101
+seed:2020
+bottleneck:256
+epsilon:1e-05
+layer:wn
+classifier:bn
+smooth:0.1
+output:ckps/source2/
+da:uda
+trte:val
+use_pasta:0
+pasta_a:3.0
+pasta_b:0.25
+pasta_k:2.0
+gamma:2.0
+loss:label_smooth_ce
+class_num:12
+s_dset_path:image_lists/visda/train_imagelist.txt
+test_dset_path:image_lists/visda/validation_imagelist.txt
+output_dir_src:ckps/source2/uda/VISDA-C/T
+name_src:T
+out_file:<_io.TextIOWrapper name='ckps/source2/uda/VISDA-C/T/log.txt' mode='w' encoding='UTF-8'>
+
+Task: T, Iter:50; (L) CE Loss = 0.96 NLL = 0.6581 Ent = 1.3184 BSC = 27.4216 ECE = 22.6386 MCE = 36.7361
+Task: T, Iter:100; (L) CE Loss = 1.00 NLL = 0.6511 Ent = 1.1365 BSC = 29.9452 ECE = 17.8477 MCE = 75.5329
+Task: T, Iter:150; (L) CE Loss = 0.94 NLL = 0.5778 Ent = 1.0408 BSC = 26.1875 ECE = 17.4438 MCE = 43.5463
+Task: T, Iter:200; (L) CE Loss = 0.81 NLL = 0.3976 Ent = 0.8616 BSC = 17.9857 ECE = 15.1392 MCE = 75.5822
+Task: T, Iter:250; (L) CE Loss = 0.74 NLL = 0.3149 Ent = 0.8040 BSC = 12.9652 ECE = 17.5389 MCE = 66.3059
+Task: T, Iter:300; (L) CE Loss = 0.79 NLL = 0.3788 Ent = 0.8083 BSC = 17.1087 ECE = 13.3993 MCE = 31.8202
+Task: T, Iter:350; (L) CE Loss = 0.76 NLL = 0.3223 Ent = 0.7375 BSC = 13.7338 ECE = 15.2176 MCE = 71.0665
+Task: T, Iter:400; (L) CE Loss = 0.71 NLL = 0.2789 Ent = 0.7266 BSC = 11.3044 ECE = 13.8315 MCE = 66.4720
+Task: T, Iter:450; (L) CE Loss = 0.76 NLL = 0.3391 Ent = 0.8211 BSC = 14.7946 ECE = 13.5465 MCE = 34.1722
+Task: T, Iter:500; (L) CE Loss = 0.68 NLL = 0.2584 Ent = 0.7716 BSC = 9.0039 ECE = 17.7023 MCE = 75.9300
+Task: T, Iter:550; (L) CE Loss = 0.69 NLL = 0.2574 Ent = 0.7229 BSC = 9.5356 ECE = 15.1067 MCE = 39.4135
+Task: T, Iter:600; (L) CE Loss = 0.68 NLL = 0.2543 Ent = 0.7681 BSC = 8.7554 ECE = 17.1751 MCE = 46.3528
+Task: T, Iter:650; (L) CE Loss = 0.74 NLL = 0.3113 Ent = 0.7599 BSC = 12.2820 ECE = 16.9669 MCE = 67.4511
+Task: T, Iter:700; (L) CE Loss = 0.72 NLL = 0.2993 Ent = 0.8026 BSC = 12.2251 ECE = 15.2009 MCE = 44.2110
+Task: T, Iter:750; (L) CE Loss = 0.71 NLL = 0.2944 Ent = 0.7242 BSC = 11.9060 ECE = 11.0975 MCE = 22.9523
+Task: T, Iter:800; (L) CE Loss = 0.72 NLL = 0.2895 Ent = 0.6485 BSC = 10.3053 ECE = 11.3197 MCE = 48.5576
+Task: T, Iter:850; (L) CE Loss = 0.71 NLL = 0.2805 Ent = 0.7254 BSC = 11.5926 ECE = 13.7029 MCE = 45.9354
+Task: T, Iter:900; (L) CE Loss = 0.69 NLL = 0.2594 Ent = 0.7368 BSC = 9.8242 ECE = 17.9628 MCE = 61.4157
+Task: T, Iter:950; (L) CE Loss = 0.67 NLL = 0.2428 Ent = 0.7489 BSC = 8.6279 ECE = 17.4341 MCE = 64.0752
+Task: T, Iter:1000; (L) CE Loss = 0.72 NLL = 0.2809 Ent = 0.6924 BSC = 11.3095 ECE = 13.1372 MCE = 70.8699
+Task: T, Iter:1050; (L) CE Loss = 0.70 NLL = 0.2735 Ent = 0.6877 BSC = 10.5039 ECE = 11.4393 MCE = 26.6405
+Task: T, Iter:1100; (L) CE Loss = 0.72 NLL = 0.2873 Ent = 0.7082 BSC = 12.3412 ECE = 13.0480 MCE = 62.9899
+Task: T, Iter:1150; (L) CE Loss = 0.67 NLL = 0.2265 Ent = 0.6231 BSC = 7.5060 ECE = 11.2379 MCE = 44.9945
+Task: T, Iter:1200; (L) CE Loss = 0.63 NLL = 0.1798 Ent = 0.6492 BSC = 5.0721 ECE = 14.9983 MCE = 62.9319
+Task: T, Iter:1250; (L) CE Loss = 0.66 NLL = 0.2132 Ent = 0.6708 BSC = 7.6796 ECE = 13.5911 MCE = 35.7571
+Task: T, Iter:1300; (L) CE Loss = 0.65 NLL = 0.2052 Ent = 0.6719 BSC = 6.6733 ECE = 15.6402 MCE = 46.5136
+Task: T, Iter:1350; (L) CE Loss = 0.71 NLL = 0.2942 Ent = 0.7382 BSC = 11.2241 ECE = 15.0390 MCE = 37.3692
+Task: T, Iter:1400; (L) CE Loss = 0.62 NLL = 0.1729 Ent = 0.6482 BSC = 4.5642 ECE = 14.8568 MCE = 64.5930
+Task: T, Iter:1450; (L) CE Loss = 0.65 NLL = 0.1925 Ent = 0.5845 BSC = 7.2469 ECE = 12.0888 MCE = 63.1697
+Task: T, Iter:1500; (L) CE Loss = 0.72 NLL = 0.2814 Ent = 0.6657 BSC = 11.2399 ECE = 10.0118 MCE = 66.4472
+Task: T, Iter:1550; (L) CE Loss = 0.68 NLL = 0.2536 Ent = 0.7238 BSC = 9.7778 ECE = 13.5839 MCE = 53.0165
+Task: T, Iter:1600; (L) CE Loss = 0.65 NLL = 0.2178 Ent = 0.6688 BSC = 7.0999 ECE = 13.5192 MCE = 57.0219
+Task: T, Iter:1650; (L) CE Loss = 0.70 NLL = 0.2661 Ent = 0.6825 BSC = 10.2549 ECE = 11.8099 MCE = 28.4468
+Task: T, Iter:1700; (L) CE Loss = 0.64 NLL = 0.1974 Ent = 0.6520 BSC = 6.6583 ECE = 13.6421 MCE = 47.6269
+Task: T, Iter:1750; (L) CE Loss = 0.63 NLL = 0.1982 Ent = 0.6667 BSC = 6.3159 ECE = 14.1725 MCE = 69.7788
+Task: T, Iter:1800; (L) CE Loss = 0.66 NLL = 0.2112 Ent = 0.6145 BSC = 7.0286 ECE = 11.8773 MCE = 60.6252

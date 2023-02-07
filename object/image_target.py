@@ -385,15 +385,18 @@ def test_target(args):
 
 	if args.da == 'oda':
 		acc_os1, acc_os2, acc_unknown = cal_acc_oda(dset_loaders['test'], netF, netB, netC)
-		log_str = '\nTraining: {}, Task: {}, Accuracy = {:.2f}% / {:.2f}% / {:.2f}%'.format(args.trte, args.name, acc_os2, acc_os1, acc_unknown)
+		#log_str = '\nTraining: {}, Task: {}, Accuracy = {:.2f}% / {:.2f}% / {:.2f}%'.format(args.trte, args.name, acc_os2, acc_os1, acc_unknown)
+		log_str = '\nTask: {}, Accuracy = {:.2f}% / {:.2f}% / {:.2f}%'.format(args.name, acc_os2, acc_os1, acc_unknown)
 	else:
 		if args.dset=='VISDA-C':
 			acc, acc_list, req_metrics = cal_acc(dset_loaders['test'], netF, netB, netC, True)
-			log_str = '\nTraining: {}, Task: {}, Accuracy = {:.2f}%'.format(args.trte, args.name, acc) + '\n' + acc_list
+			#log_str = '\nTraining: {}, Task: {}, Accuracy = {:.2f}%'.format(args.trte, args.name, acc) + '\n' + acc_list
+			log_str = '\nTask: {}, Accuracy = {:.2f}%'.format(args.name, acc) + '\n' + acc_list
 			log_str += "\n Target: " + str(req_metrics)
 		else:
 			acc, _ = cal_acc(dset_loaders['test'], netF, netB, netC, False)
-			log_str = '\nTraining: {}, Task: {}, Accuracy = {:.2f}%'.format(args.trte, args.name, acc)
+			#log_str = '\nTraining: {}, Task: {}, Accuracy = {:.2f}%'.format(args.trte, args.name, acc)
+			log_str = '\nTask: {}, Accuracy = {:.2f}%'.format(args.name, acc)
 
 	args.out_file.write(log_str)
 	args.out_file.flush()
